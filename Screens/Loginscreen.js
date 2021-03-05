@@ -13,7 +13,7 @@ export default function Loginscreen({navigation}) {
         source={require('../assests/images/onboarding-img2.png')}
         style={styles.logo}
       />
-      <Text style={styles.text}> Search Hotels </Text>
+      <Text style={styles.text}> Octev </Text>
       <Forminput
         labelvalue={email}
         onChangeText={(useremail) => Setemail(useremail)}
