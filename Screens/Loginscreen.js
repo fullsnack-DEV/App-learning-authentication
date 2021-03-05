@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Formbtn from '../component/Formbtn';
 import Forminput from '../component/Forminput';
+import Socialbtn from '../component/Socialbtn';
 
 export default function Loginscreen({navigation}) {
   const [email, Setemail] = useState();
@@ -30,6 +31,32 @@ export default function Loginscreen({navigation}) {
         secureTextEntry={true}
       />
       <Formbtn btntitle="Sign in" onPress={() => alert('Sign in clicked')} />
+      <TouchableOpacity style={styles.forgotButton}>
+        <Text style={styles.navButtonText}>Forgot Password ?</Text>
+      </TouchableOpacity>
+
+      <Socialbtn
+        btntitle="Sign in with Facebook"
+        btntype="facebook"
+        color="#4867aa"
+        backgroundColor="#e6eaf4"
+        onPress={() => {}}
+      />
+      <Socialbtn
+        btntitle="Sign in with Login"
+        btntype="google"
+        color="#de4d41"
+        backgroundColor="#f5e7ea"
+        onPress={() => {}}
+      />
+
+      <TouchableOpacity
+        style={styles.forgotButton}
+        onPress={() => navigation.navigate('SignupScreen')}>
+        <Text style={styles.navButtonText}>
+          Don't have an account? Create here
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -39,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    paddingTop: 100,
+    paddingTop: 30,
   },
   logo: {
     height: 150,
@@ -61,8 +88,7 @@ const styles = StyleSheet.create({
   },
   navButtonText: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: 'bold',
     color: '#2e64e5',
-    fontFamily: 'Lato-Regular',
   },
 });
