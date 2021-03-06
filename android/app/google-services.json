@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "584934436148",
+    "project_id": "demoapp-ccb3d",
+    "storage_bucket": "demoapp-ccb3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584934436148:android:42bef11b2129ac502a0961",
+        "android_client_info": {
+          "package_name": "com.demoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584934436148-founvtqrkann084pjnesu1urlk70ppeq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2UOIpPacn6Mr8OKkeRhhkOwCZAz798f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584934436148-founvtqrkann084pjnesu1urlk70ppeq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584934436148:android:f39461f5508dd9f82a0961",
+        "android_client_info": {
+          "package_name": "com.mediaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584934436148-founvtqrkann084pjnesu1urlk70ppeq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2UOIpPacn6Mr8OKkeRhhkOwCZAz798f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584934436148-founvtqrkann084pjnesu1urlk70ppeq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

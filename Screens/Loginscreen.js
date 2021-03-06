@@ -43,7 +43,7 @@ export default function Loginscreen({navigation}) {
         onPress={() => {}}
       />
       <Socialbtn
-        btntitle="Sign in with Login"
+        btntitle="Sign in with Google"
         btntype="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
