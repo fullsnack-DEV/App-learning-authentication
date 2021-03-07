@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Formbtn from '../component/Formbtn';
 import Forminput from '../component/Forminput';
 import Socialbtn from '../component/Socialbtn';
-
+import {Authcontext} from '../Navigation/Authprovider';
 export default function Loginscreen({navigation}) {
   const [email, Setemail] = useState();
   const [password, Setpassword] = useState();
   const [conpassword, Setconpassword] = useState();
+
+  const {register} = useContext(Authcontext);
 
   return (
     <View style={styles.container}>
@@ -36,7 +38,7 @@ export default function Loginscreen({navigation}) {
         icontype="lock"
         secureTextEntry={true}
       />
-      <Formbtn btntitle="Sign up" onPress={() => alert('Sign in clicked')} />
+      <Formbtn btntitle="Sign up" onPress={() => register(email, password)} />
 
       <View style={styles.textPrivate}>
         <Text style={styles.color_textPrivate}>
