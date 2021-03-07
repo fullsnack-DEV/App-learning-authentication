@@ -30,7 +30,10 @@ export default function Loginscreen({navigation}) {
         icontype="lock"
         secureTextEntry={true}
       />
-      <Formbtn btntitle="Sign in" onPress={() => alert('Sign in clicked')} />
+      <Formbtn
+        btntitle="Sign in"
+        onPress={() => navigation.navigate('Homemain')}
+      />
       <TouchableOpacity style={styles.forgotButton}>
         <Text style={styles.navButtonText}>Forgot Password ?</Text>
       </TouchableOpacity>
