@@ -7,12 +7,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Forminput from '../component/Forminput';
-import Formbtn from '../component/Formbtn';
 import {Authcontext} from '../Navigation/Authprovider';
+import Formbtn from '../component/Formbtn';
 export default function LoginScreenn({navigation}) {
   const [Email, SetEmail] = useState();
   const [Password, SetPassword] = useState();
-
   const {login} = useContext(Authcontext);
 
   return (
@@ -60,11 +59,12 @@ export default function LoginScreenn({navigation}) {
             />
           </View>
         </View>
+
         <TouchableOpacity
           style={{top: '45%', alignSelf: 'center'}}
           onPress={() => navigation.navigate('SignupScreen')}>
           <Text style={{color: '#fff', fontSize: 18}}>
-            Don't have account?{' '}
+            Don't have account?
             <Text style={{color: '#FA5805'}}> Create here</Text>
           </Text>
         </TouchableOpacity>
