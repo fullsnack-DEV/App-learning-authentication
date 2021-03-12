@@ -28,11 +28,11 @@ export default function Forminput({
 const styles = StyleSheet.create({
   inputContainer: {
     marginTop: 5,
-    marginBottom: 10,
-    width: '100%',
-    height: Dimensionheight / 15,
+    marginBottom: 25,
+    width: '95%',
+    height: Dimensionheight / 14,
     borderColor: '#ccc',
-    borderRadius: 5,
+    borderRadius: 25,
     borderWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',

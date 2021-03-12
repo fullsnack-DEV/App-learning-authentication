@@ -12,13 +12,14 @@ export default function Formbtn({btntitle, ...rest}) {
 const styles = StyleSheet.create({
   btncontainer: {
     marginTop: 10,
-    width: '100%',
+    width: '50%',
     height: Dimensionheight / 15,
-    backgroundColor: '#2e64e0',
+    backgroundColor: '#FA5805',
     padding: 10,
     alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'center',
-    borderRadius: 3,
+    borderRadius: 15,
   },
   buttontext: {
     fontSize: 18,
@@ -27,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-//sucess is not a story its a journey
+//sucess is not a destination its a journey
