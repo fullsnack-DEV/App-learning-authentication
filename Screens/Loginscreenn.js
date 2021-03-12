@@ -65,7 +65,7 @@ export default function LoginScreenn({navigation}) {
           onPress={() => navigation.navigate('SignupScreen')}>
           <Text style={{color: '#fff', fontSize: 18}}>
             Don't have account?
-            <Text style={{color: '#FA5805'}}> Create here</Text>
+            <Text style={{color: '#FA5805'}}> Create here!</Text>
           </Text>
         </TouchableOpacity>
       </ImageBackground>
