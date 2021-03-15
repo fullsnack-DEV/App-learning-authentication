@@ -1,9 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-export default function CateogryCom({icon, title, onPress}) {
+export default function CateogryCom({
+  icon,
+  title,
+  onPress,
+  SelectedCateogory,
+  stylebg,
+}) {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity style={[styles.container, stylebg]} onPress={onPress}>
       <View style={styles.imgbg}>
         <Image
           source={icon}
@@ -25,9 +31,9 @@ export default function CateogryCom({icon, title, onPress}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
     borderRadius: 15,
-
+    borderColor: '#f1f1f1',
+    borderWidth: 2,
     height: 65,
     width: 140,
     flexDirection: 'row',
