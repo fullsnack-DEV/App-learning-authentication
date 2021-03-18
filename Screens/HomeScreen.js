@@ -1,8 +1,10 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from "react";
 import {
   View,
   Text,
@@ -10,46 +12,58 @@ import {
   SafeAreaView,
   Image,
   FlatList,
-} from 'react-native';
-import CateogryCom from '../component/CateogryCom';
-import Formbtn from '../component/Formbtn';
-import SearchBar from '../component/SearchBar';
-import Cateogries from '../Data/Cateogries';
-import {Authcontext} from '../Navigation/Authprovider';
+} from "react-native";
+import CateogryCom from "../component/CateogryCom";
+import Formbtn from "../component/Formbtn";
+import SearchBar from "../component/SearchBar";
+import Cateogries from "../Data/Cateogries";
+import { Authcontext } from "../Navigation/Authprovider";
+import TripsData from "../Data/TopPicksdata";
 
 export default function HomeScreen() {
-  const {logout} = useContext(Authcontext);
+  const { logout } = useContext(Authcontext);
 
   const [Cateogory, SetCategory] = useState();
+
+  const [TouerList, SetTourList] = useState();
 
   const [SelectedCateogory, SetSelecteogory] = useState();
 
   const onSelectCateogory = (Cateogory) => {
+    //herer we filter out the data by the cateogry
+
+    let NewTourList = TripsData.filter((cat) =>
+      cat.categories.includes(Cateogory.id)
+    );
+
+    SetTourList(NewTourList);
+
     SetSelecteogory(Cateogory);
   };
   //retun
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#f8f8f8'}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
       <View style={styles.header}>
         <View style={styles.profile}>
           <View style={styles.backgroundprofile}>
             <Image
-              source={require('../assests/images/teenager.png')}
+              source={require("../assests/images/teenager.png")}
               style={{
                 height: 35,
                 width: 35,
-                alignSelf: 'center',
+                alignSelf: "center",
                 marginVertical: 5,
               }}
             />
           </View>
           <Text
             style={{
-              textAlignVertical: 'center',
+              textAlignVertical: "center",
               padding: 10,
               fontSize: 18,
-              fontWeight: 'bold',
-            }}>
+              fontWeight: "bold",
+            }}
+          >
             Hi, jenifer !
           </Text>
         </View>
@@ -57,11 +71,11 @@ export default function HomeScreen() {
         <View style={styles.notification}>
           <View style={styles.background}>
             <Image
-              source={require('../assests/images/bell.png')}
+              source={require("../assests/images/bell.png")}
               style={{
                 height: 30,
                 width: 30,
-                alignSelf: 'center',
+                alignSelf: "center",
                 marginVertical: 5,
               }}
             />
@@ -70,8 +84,10 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.heading}>
-        <Text style={{fontSize: 28, fontWeight: 'bold'}}>Where do</Text>
-        <Text style={{fontSize: 28, fontWeight: 'bold'}}>you want to go ?</Text>
+        <Text style={{ fontSize: 28, fontWeight: "bold" }}>Where do</Text>
+        <Text style={{ fontSize: 28, fontWeight: "bold" }}>
+          you want to go ?
+        </Text>
       </View>
 
       <View style={styles.Searchbar}>
@@ -81,10 +97,11 @@ export default function HomeScreen() {
         <Text
           style={{
             fontSize: 20,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginVertical: 25,
             left: 25,
-          }}>
+          }}
+        >
           Categories
         </Text>
 
@@ -93,8 +110,8 @@ export default function HomeScreen() {
           keyExtractor={(item) => `${item.id}`}
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{marginLeft: 20}}
-          renderItem={({item}) => {
+          contentContainerStyle={{ marginLeft: 20 }}
+          renderItem={({ item }) => {
             return (
               <CateogryCom
                 icon={item.icon}
@@ -102,7 +119,7 @@ export default function HomeScreen() {
                 onPress={() => onSelectCateogory(item)}
                 stylebg={{
                   backgroundColor:
-                    SelectedCateogory?.id == item.id ? '#fff' : '#f1f1f1',
+                    SelectedCateogory?.id == item.id ? "#fff" : "#f1f1f1",
                 }}
               />
             );
@@ -111,10 +128,11 @@ export default function HomeScreen() {
         <Text
           style={{
             fontSize: 20,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginVertical: 25,
             left: 25,
-          }}>
+          }}
+        >
           Top trips
         </Text>
       </View>
@@ -124,20 +142,20 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   maincontainer: {},
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
 
     padding: 20,
     marginVertical: 10,
   },
   profile: {
     padding: 10,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   notification: {
     padding: 10,
-    alignSelf: 'center',
-    alignItems: 'center',
+    alignSelf: "center",
+    alignItems: "center",
   },
   heading: {
     padding: 10,
@@ -145,11 +163,11 @@ const styles = StyleSheet.create({
     left: 15,
   },
   background: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     height: 45,
     width: 45,
     borderRadius: 30,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 12,
@@ -160,11 +178,11 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   backgroundprofile: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     height: 45,
     width: 45,
     borderRadius: 30,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 12,
