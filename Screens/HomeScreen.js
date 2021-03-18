@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
@@ -26,7 +27,7 @@ export default function HomeScreen() {
   const onSelectCateogory = (Cateogory) => {
     SetSelecteogory(Cateogory);
   };
- //retun
+  //retun
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#f8f8f8'}}>
       <View style={styles.header}>
