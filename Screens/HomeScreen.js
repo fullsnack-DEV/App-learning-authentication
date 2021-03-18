@@ -1,3 +1,6 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import React, {useContext, useState} from 'react';
 import {
   View,
@@ -23,7 +26,7 @@ export default function HomeScreen() {
   const onSelectCateogory = (Cateogory) => {
     SetSelecteogory(Cateogory);
   };
-
+ //retun
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#f8f8f8'}}>
       <View style={styles.header}>
