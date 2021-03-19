@@ -31,7 +31,7 @@ export default function CateogryCom({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 15,
+    borderRadius: 20,
     borderColor: '#f1f1f1',
     borderWidth: 2,
     height: 65,

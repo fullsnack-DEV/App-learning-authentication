@@ -1,41 +1,49 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {Dimensionheight, Dimensionwidth} from '../Utils/Dimensions';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function TravelitemCpm({img, title}) {
+export default function TravelitemCpm({img, title, Subtitle, onPress}) {
   return (
-    <View style={styles.container}>
-      <View style={styles.img}>
-        <Image
-          source={img}
-          style={{
-            width: Dimensionwidth * 0.5,
-            height: Dimensionheight * 0.28,
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.img}>
+          <Image
+            source={img}
+            style={{
+              width: Dimensionwidth * 0.5,
+              height: Dimensionheight * 0.28,
 
-            borderRadius: 30,
-          }}
-        />
-      </View>
-      <View style={styles.footer}>
-        <View style={styles.title}>
-          <Text style={{color: '#000', fontSize: 20, fontWeight: 'bold'}}>
-            {title}
-          </Text>
-          <Text style={{color: '#000', fontSize: 15, fontWeight: 'bold'}}>
-            Camp
-          </Text>
-        </View>
-
-        <View style={styles.heart}>
-          <AntDesign
-            name="hearto"
-            size={25}
-            style={{marginVertical: 8, color: '#FA5805'}}
+              borderRadius: 30,
+            }}
           />
         </View>
+        <View style={styles.footer}>
+          <View style={styles.title}>
+            <Text
+              style={{
+                color: '#000',
+                fontSize: 17,
+                fontWeight: 'bold',
+                width: '100%',
+              }}>
+              {title}
+            </Text>
+            <Text style={{color: '#000', fontSize: 15, fontWeight: 'bold'}}>
+              {Subtitle}
+            </Text>
+          </View>
+
+          <View style={styles.heart}>
+            <AntDesign
+              name="hearto"
+              size={18}
+              style={{marginVertical: 5, color: '#FA5805'}}
+            />
+          </View>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -68,8 +76,8 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   heart: {
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 30,
     backgroundColor: '#fff',
     borderRadius: 50,
     alignItems: 'center',
@@ -82,5 +90,8 @@ const styles = StyleSheet.create({
     shadowRadius: 7.49,
 
     elevation: 5,
+  },
+  title: {
+    marginRight: 8,
   },
 });

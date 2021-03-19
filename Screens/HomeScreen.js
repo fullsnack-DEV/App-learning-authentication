@@ -15,11 +15,18 @@ import Cateogries from '../Data/Cateogries';
 import {Authcontext} from '../Navigation/Authprovider';
 import TripsData from '../Data/TopPicksdata';
 import TravelitemCpm from '../component/TravelitemCpm';
+import TopTrips from '../Data/TopTrips';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
+  useEffect(() => {
+    SetTopTrips(TopTrips);
+  }, []);
+
   const {logout} = useContext(Authcontext);
 
   const [TourList, SetTourList] = useState();
+
+  const [TopTrip, SetTopTrips] = useState();
 
   const [SelectedCateogory, SetSelecteogory] = useState();
 
@@ -34,10 +41,6 @@ export default function HomeScreen() {
 
     SetSelecteogory(Cateogory);
   };
-
-  useEffect(() => {
-    SetTourList(TripsData);
-  }, [1]);
 
   //retun
   return (
@@ -83,7 +86,14 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.heading}>
-          <Text style={{fontSize: 28, fontWeight: 'bold'}}>Where do</Text>
+          <Text
+            style={{
+              fontSize: 28,
+              fontWeight: 'bold',
+              fontFamily: 'Nunito-Black',
+            }}>
+            Where do
+          </Text>
           <Text style={{fontSize: 28, fontWeight: 'bold'}}>
             you want to go ?
           </Text>
@@ -134,13 +144,24 @@ export default function HomeScreen() {
           </Text>
 
           <FlatList
-            data={TourList}
+            data={TourList || TopTrip}
             keyExtractor={(item) => `${item.id}`}
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginRight: 25}}
             renderItem={({item}) => {
-              return <TravelitemCpm img={item.photo} title={item.name} />;
+              return (
+                <TravelitemCpm
+                  img={item.photo}
+                  Subtitle={item.categorieName}
+                  title={item.name}
+                  onPress={() =>
+                    navigation.navigate('DetailScreen', {
+                      item,
+                    })
+                  }
+                />
+              );
             }}
           />
         </View>
