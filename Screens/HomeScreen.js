@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-native/no-inline-styles */
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -28,14 +26,19 @@ export default function HomeScreen() {
   const onSelectCateogory = (Cateogory) => {
     //herer we filter out the data by the cateogry
 
-    let NewTourList = TripsData.filter((cat) =>
-      cat.categories.includes(Cateogory.id),
+    let NewTourList = TripsData.filter((c) =>
+      c.categories.includes(Cateogory.id),
     );
 
     SetTourList(NewTourList);
 
     SetSelecteogory(Cateogory);
   };
+
+  useEffect(() => {
+    SetTourList(TripsData);
+  }, [1]);
+
   //retun
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}>
@@ -137,7 +140,7 @@ export default function HomeScreen() {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{marginRight: 25}}
             renderItem={({item}) => {
-              return <TravelitemCpm img={item.photo} />;
+              return <TravelitemCpm img={item.photo} title={item.name} />;
             }}
           />
         </View>

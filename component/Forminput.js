@@ -1,10 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable quotes */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/self-closing-comp */
-
 import React from 'react';
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';

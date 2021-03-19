@@ -1,9 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable quotes */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {Dimensionheight, Dimensionwidth} from '../Utils/Dimensions';
@@ -18,6 +12,7 @@ export default function TravelitemCpm({img, title}) {
           style={{
             width: Dimensionwidth * 0.5,
             height: Dimensionheight * 0.28,
+
             borderRadius: 30,
           }}
         />
@@ -25,7 +20,7 @@ export default function TravelitemCpm({img, title}) {
       <View style={styles.footer}>
         <View style={styles.title}>
           <Text style={{color: '#000', fontSize: 20, fontWeight: 'bold'}}>
-            Banjir Kanal
+            {title}
           </Text>
           <Text style={{color: '#000', fontSize: 15, fontWeight: 'bold'}}>
             Camp

@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
 import icon from '../assests/constants';
 
 export default categoryData = [
