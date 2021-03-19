@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable curly */
+/* eslint-disable no-shadow */
 import React, {useState, useContext, useEffect} from 'react';
 
 import auth from '@react-native-firebase/auth';
