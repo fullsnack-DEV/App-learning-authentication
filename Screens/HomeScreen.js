@@ -90,7 +90,7 @@ export default function HomeScreen({navigation}) {
             style={{
               fontSize: 28,
               fontWeight: 'bold',
-              fontFamily: 'Nunito-Black',
+              fontFamily: 'Nunito-Bold',
             }}>
             Where do
           </Text>
