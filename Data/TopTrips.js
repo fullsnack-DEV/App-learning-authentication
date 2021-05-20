@@ -10,7 +10,8 @@ export default TopTrips = [
     categorieName: 'Camp',
     photo: images.camp1,
     price: '120',
-
+    description:
+      "In the digital age, photography is the first engagement tool we have when advertising tours and activities. It's what attracts the website user, and what will set you apart from your competition. You need to choose a featured image that is eye-catching, unique and makes a customer want to click and find out more. Look at what your competitors are using, and select something different so that your tour stands out. You should also change your photo from time-to-time to see if engagement increases or decreases. This way you can find which one works best.",
     location: {
       latitude: 1.5347282806345879,
       longitude: 110.35632207358996,
@@ -24,6 +25,8 @@ export default TopTrips = [
     categorieName: 'Island',
     photo: images.island1,
     price: '180',
+    description:
+      "In the digital age, photography is the first engagement tool we have when advertising tours and activities. It's what attracts the website user, and what will set you apart from your competition. You need to choose a featured image that is eye-catching, unique and makes a customer want to click and find out more. Look at what your competitors are using, and select something different so that your tour stands out. You should also change your photo from time-to-time to see if engagement increases or decreases. This way you can find which one works best.",
     location: {
       latitude: 1.5347282806345879,
       longitude: 110.35632207358996,

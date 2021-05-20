@@ -1,4 +1,5 @@
 import React from 'react';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {View, Text, StyleSheet, SafeAreaView, Image} from 'react-native';
 import {Dimensionheight, Dimensionwidth} from '../Utils/Dimensions';
 
@@ -60,6 +61,80 @@ export default function DeatilsScreen({route}) {
             Reviews
           </Text>
         </View>
+        <View style={styles.ratingContainer}>
+          <View style={styles.durations}>
+            <View style={styles.icon}>
+              <AntDesign name="clockcircle" size={25} color={'#F17A49'} />
+            </View>
+            <View style={styles.des}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontWeight: 'bold',
+                  color: '#0405',
+
+                  alignSelf: 'center',
+                }}>
+                Durations
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: '#000',
+
+                  alignSelf: 'center',
+                }}>
+                5 Hours
+              </Text>
+            </View>
+          </View>
+          <View style={styles.ratings}>
+            <View style={styles.icon}>
+              <AntDesign
+                name="star"
+                size={25}
+                color={'#F17A49'}
+                style={{
+                  shadowColor: '#000',
+                  shadowOffset: {
+                    width: 0,
+                    height: 12,
+                  },
+                  shadowOpacity: 0.89,
+                  shadowRadius: 10,
+
+                  elevation: 24,
+                }}
+              />
+            </View>
+            <View style={styles.des}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontWeight: 'bold',
+                  color: '#0405',
+
+                  alignSelf: 'center',
+                }}>
+                Ratings
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: '#000',
+
+                  alignSelf: 'center',
+                }}>
+                4.8 Out of 5
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View style={styles.description}>
+        <Text>{item.description}</Text>
       </View>
     </SafeAreaView>
   );
@@ -83,6 +158,31 @@ const styles = StyleSheet.create({
     marginTop: 50,
     left: 30,
     flexDirection: 'row',
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: 25,
+    width: '80%',
+    top: -10,
+    justifyContent: 'space-around',
+    left: 10,
+  },
+  //not able to add the shadow to the icons
+  durations: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  des: {
+    marginLeft: 20,
+  },
+  icon: {
+    justifyContent: 'center',
+  },
+  ratings: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    left: 15,
   },
 });
 
